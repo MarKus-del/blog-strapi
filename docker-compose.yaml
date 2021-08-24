@@ -1,0 +1,13 @@
+version: '3.8'
+
+services: 
+  blog_strapi:
+    container_name: blog_strapi
+    image: postgres:11
+    environment: 
+      POSTGRES_DB: blog_strapi
+      POSTGRES_PASSWORD: abc123
+    volumes: 
+      - ./.docker/data/postgres:/var/lib/postgresql/data
+    ports: 
+      - 5432:5432
